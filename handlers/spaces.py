@@ -8,6 +8,7 @@ from aiogram.types import Message
 
 from database import (
     add_member,
+    add_user,
     code_exists,
     count_members,
     create_space,
@@ -135,6 +136,17 @@ async def join_handler(message: Message, command: CommandObject) -> None:
 async def join_by_code(message: Message, code: str) -> None:
     code = code.strip().upper()
     user_id = message.from_user.id
+
+    # Убеждаемся, что пользователь есть в БД, иначе add_member упадёт на foreign key
+    try:
+        await add_user(
+            telegram_id=user_id,
+            username=message.from_user.username,
+            first_name=message.from_user.first_name,
+        )
+    except Exception:
+        await message.answer("Не удалось сохранить пользователя. Попробуй ещё раз.")
+        return
 
     try:
         space = await get_space_by_code(code)

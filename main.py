@@ -25,17 +25,9 @@ router = Router()
 
 
 @router.message(Command("start"))
-async def cmd_start(
-    message: Message,
-    command: CommandObject,
-) -> None:
-    """Обработчик команды /start."""
-
-    # Deep-link /start join_ABC123
-    if command.args and command.args.startswith("join_"):
-        await handle_start_with_args(message, command.args)
-        return
-
+async def cmd_start(message: Message, command: CommandObject) -> None:
+    # Всегда сохраняем пользователя первым делом.
+    # Без этого join по ссылке упадёт на foreign key.
     try:
         await database.add_user(
             telegram_id=message.from_user.id,
@@ -45,6 +37,12 @@ async def cmd_start(
     except Exception as e:
         logger.exception("Не удалось сохранить пользователя: %s", e)
 
+    # Если пришёл по deep-link вида /start join_ABC123 — обрабатываем join
+    if command.args and command.args.startswith("join_"):
+        await handle_start_with_args(message, command.args)
+        return
+
+    # Обычное приветствие с главным меню
     keyboard = ReplyKeyboardMarkup(
         keyboard=[
             [KeyboardButton(text="💰 Добавить трату")],
@@ -62,7 +60,6 @@ async def cmd_start(
         "Выбери действие в меню ниже.",
         reply_markup=keyboard,
     )
-
 
 @router.message(Command("help"))
 async def cmd_help(message: Message) -> None:

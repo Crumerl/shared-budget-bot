@@ -1,19 +1,20 @@
 """
 Скрипт ежедневного коммита.
-Дописывает запись в DEVLOG.md, коммитит и пушит на GitHub.
+Дописывает запись в devlog.md, коммитит и пушит на GitHub.
 Запускается через Планировщик задач Windows.
 """
 
 import os
 import subprocess
+import sys
 from datetime import date
 
 # ---- настройки ----
 REPO_PATH = r"D:\VSCode\shared-budget-bot"
-DEVLOG = os.path.join(REPO_PATH, "DEVLOG.md")
-START_DATE = date(2026, 9, 22)  # день первого коммита
+DEVLOG_NAME = "devlog.md"
+DEVLOG = os.path.join(REPO_PATH, DEVLOG_NAME)
+START_DATE = date(2026, 9, 22)
 
-# Темы, которые ротируются по дням
 TOPICS = [
     "Ревизия обработчиков aiogram",
     "Проверка логики расчёта долгов",
@@ -38,15 +39,28 @@ TOPICS = [
 ]
 
 
-def get_day_number() -> int:
-    """Сколько дней прошло с момента старта."""
-    return (date.today() - START_DATE).days + 1
+def run_git(args: list[str]) -> None:
+    """Запускает git-команду и печатает её вывод."""
+    print(f">>> git {' '.join(args)}")
+    result = subprocess.run(
+        ["git"] + args,
+        cwd=REPO_PATH,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+    )
+    if result.stdout:
+        print("STDOUT:", result.stdout)
+    if result.stderr:
+        print("STDERR:", result.stderr)
+
+    if result.returncode != 0:
+        print(f"!!! git {' '.join(args)} завершился с кодом {result.returncode}")
+        sys.exit(result.returncode)
 
 
 def main() -> None:
-    os.chdir(REPO_PATH)
-
-    day = get_day_number()
+    day = (date.today() - START_DATE).days + 1
     today = date.today().strftime("%d.%m.%Y")
     topic = TOPICS[(day - 1) % len(TOPICS)]
 
@@ -56,14 +70,11 @@ def main() -> None:
         f.write(f"- {topic}\n")
 
     # Git-команды
-    subprocess.run(["git", "add", "DEVLOG.md"], check=True)
-    subprocess.run(
-        ["git", "commit", "-m", f"devlog: день {day} — {topic}"],
-        check=True,
-    )
-    subprocess.run(["git", "push"], check=True)
+    run_git(["add", DEVLOG_NAME])
+    run_git(["commit", "-m", f"devlog: день {day} — {topic}"])
+    run_git(["push"])
 
-    print(f"Коммит за день {day} отправлен.")
+    print(f"\nКоммит за день {day} отправлен.")
 
 
 if __name__ == "__main__":
