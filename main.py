@@ -50,7 +50,7 @@ async def cmd_start(message: Message, command: CommandObject) -> None:
             [KeyboardButton(text="📜 История")],
             [KeyboardButton(text="🏠 Пространство")],
             [KeyboardButton(text="❓ Помощь")],
-        ],
+        ],  
         resize_keyboard=True,
     )
 

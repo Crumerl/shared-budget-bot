@@ -180,7 +180,14 @@ def main() -> None:
         sys.exit(1)
 
     log(f"Коммит за день {day} успешно отправлен.")
+    sys.exit(0)
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except SystemExit:
+        raise
+    except Exception as e:
+        log(f"НЕОБРАБОТАННОЕ ИСКЛЮЧЕНИЕ: {e}")
+        sys.exit(1)
