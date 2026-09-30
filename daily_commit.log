@@ -101,3 +101,111 @@ no changes added to commit (use "git add" and/or "git commit -a")
 [2026-09-27 19:42:07]   STDERR: Everything up-to-date
 [2026-09-27 19:42:07]   Exit code: 0
 [2026-09-27 19:42:07] Коммит за день 6 успешно отправлен.
+[2026-09-28 15:35:04] ============================================================
+[2026-09-28 15:35:04] Запуск daily_commit.py
+[2026-09-28 15:35:04] Добавлена запись: ### День 7 — 28.09.2026
+[2026-09-28 15:35:04] Коммит создан: devlog: день 7 — Тестирование FSM выбора участников
+[2026-09-28 15:35:04] Проверка соединения с github.com...
+[2026-09-28 15:35:05] Соединение с github.com появилось (ждали 0 сек).
+[2026-09-28 15:35:05] >>> git push (попытка 1/6)
+[2026-09-28 15:35:09]   STDERR: To https://github.com/Crumerl/shared-budget-bot.git
+   35f7184..f4f029e  main -> main
+[2026-09-28 15:35:09]   Exit code: 0
+[2026-09-28 15:35:09] Коммит за день 7 успешно отправлен.
+[2026-09-28 15:42:24] ============================================================
+[2026-09-28 15:42:24] Запуск daily_commit.py
+[2026-09-28 15:42:24] Запись «### День 7 — 28.09.2026» уже существует.
+[2026-09-28 15:42:24] Коммитить нечего — devlog уже закоммичен ранее.
+[2026-09-28 15:42:24] Проверка соединения с github.com...
+[2026-09-28 15:42:25] Соединение с github.com появилось (ждали 0 сек).
+[2026-09-28 15:42:25] >>> git push (попытка 1/6)
+[2026-09-28 15:42:27]   STDERR: Everything up-to-date
+[2026-09-28 15:42:27]   Exit code: 0
+[2026-09-28 15:42:27] Коммит за день 7 успешно отправлен.
+[2026-09-29 12:00:02] ============================================================
+[2026-09-29 12:00:02] Запуск daily_commit.py
+[2026-09-29 12:00:02] Добавлена запись: ### День 8 — 29.09.2026
+[2026-09-29 12:00:02] Коммит создан: devlog: день 8 — Проверка работы deep-link /start join_
+[2026-09-29 12:00:02] Проверка соединения с github.com...
+[2026-09-29 12:00:02] Соединение с github.com появилось (ждали 0 сек).
+[2026-09-29 12:00:02] >>> git push (попытка 1/6)
+[2026-09-29 12:00:07]   STDERR: To https://github.com/Crumerl/shared-budget-bot.git
+   f4f029e..ce99084  main -> main
+[2026-09-29 12:00:07]   Exit code: 0
+[2026-09-29 12:00:07] Коммит за день 8 успешно отправлен.
+[2026-09-30 12:00:02] ============================================================
+[2026-09-30 12:00:02] Запуск daily_commit.py
+[2026-09-30 12:00:02] Добавлена запись: ### День 9 — 30.09.2026
+[2026-09-30 12:00:02] Коммит создан: devlog: день 9 — Анализ покрытия функций БД
+[2026-09-30 12:00:02] Проверка соединения с github.com...
+[2026-09-30 12:00:03] Соединение с github.com появилось (ждали 0 сек).
+[2026-09-30 12:00:03] >>> git push (попытка 1/6)
+[2026-09-30 12:00:06]   STDERR: fatal: Unable to persist credentials with the 'wincredman' credential store.
+See https://aka.ms/gcm/credstores for more information.
+fatal: Unable to persist credentials with the 'wincredman' credential store.
+See https://aka.ms/gcm/credstores for more information.
+bash: line 1: /dev/tty: No such device or address
+error: failed to execute prompt script (exit code 1)
+fatal: could not read Username for 'https://github.com': No such file or directory
+[2026-09-30 12:00:06]   Exit code: 128
+[2026-09-30 12:00:06]   Ошибка. Ждём 30 сек перед следующей попыткой.
+[2026-09-30 12:00:36] Проверка соединения с github.com...
+[2026-09-30 12:00:37] Соединение с github.com появилось (ждали 0 сек).
+[2026-09-30 12:00:37] >>> git push (попытка 2/6)
+[2026-09-30 12:00:38]   STDERR: fatal: Unable to persist credentials with the 'wincredman' credential store.
+See https://aka.ms/gcm/credstores for more information.
+fatal: Unable to persist credentials with the 'wincredman' credential store.
+See https://aka.ms/gcm/credstores for more information.
+bash: line 1: /dev/tty: No such device or address
+error: failed to execute prompt script (exit code 1)
+fatal: could not read Username for 'https://github.com': No such file or directory
+[2026-09-30 12:00:38]   Exit code: 128
+[2026-09-30 12:00:38]   Ошибка. Ждём 30 сек перед следующей попыткой.
+[2026-09-30 12:01:08] Проверка соединения с github.com...
+[2026-09-30 12:01:08] Соединение с github.com появилось (ждали 0 сек).
+[2026-09-30 12:01:08] >>> git push (попытка 3/6)
+[2026-09-30 12:01:10]   STDERR: fatal: Unable to persist credentials with the 'wincredman' credential store.
+See https://aka.ms/gcm/credstores for more information.
+fatal: Unable to persist credentials with the 'wincredman' credential store.
+See https://aka.ms/gcm/credstores for more information.
+bash: line 1: /dev/tty: No such device or address
+error: failed to execute prompt script (exit code 1)
+fatal: could not read Username for 'https://github.com': No such file or directory
+[2026-09-30 12:01:10]   Exit code: 128
+[2026-09-30 12:01:10]   Ошибка. Ждём 30 сек перед следующей попыткой.
+[2026-09-30 12:01:40] Проверка соединения с github.com...
+[2026-09-30 12:01:40] Соединение с github.com появилось (ждали 0 сек).
+[2026-09-30 12:01:40] >>> git push (попытка 4/6)
+[2026-09-30 12:01:41]   STDERR: fatal: Unable to persist credentials with the 'wincredman' credential store.
+See https://aka.ms/gcm/credstores for more information.
+fatal: Unable to persist credentials with the 'wincredman' credential store.
+See https://aka.ms/gcm/credstores for more information.
+bash: line 1: /dev/tty: No such device or address
+error: failed to execute prompt script (exit code 1)
+fatal: could not read Username for 'https://github.com': No such file or directory
+[2026-09-30 12:01:41]   Exit code: 128
+[2026-09-30 12:01:41]   Ошибка. Ждём 30 сек перед следующей попыткой.
+[2026-09-30 12:02:11] Проверка соединения с github.com...
+[2026-09-30 12:02:11] Соединение с github.com появилось (ждали 0 сек).
+[2026-09-30 12:02:11] >>> git push (попытка 5/6)
+[2026-09-30 12:02:13]   STDERR: fatal: Unable to persist credentials with the 'wincredman' credential store.
+See https://aka.ms/gcm/credstores for more information.
+fatal: Unable to persist credentials with the 'wincredman' credential store.
+See https://aka.ms/gcm/credstores for more information.
+bash: line 1: /dev/tty: No such device or address
+error: failed to execute prompt script (exit code 1)
+fatal: could not read Username for 'https://github.com': No such file or directory
+[2026-09-30 12:02:13]   Exit code: 128
+[2026-09-30 12:02:13]   Ошибка. Ждём 30 сек перед следующей попыткой.
+[2026-09-30 12:02:43] Проверка соединения с github.com...
+[2026-09-30 12:02:43] Соединение с github.com появилось (ждали 0 сек).
+[2026-09-30 12:02:43] >>> git push (попытка 6/6)
+[2026-09-30 12:02:44]   STDERR: fatal: Unable to persist credentials with the 'wincredman' credential store.
+See https://aka.ms/gcm/credstores for more information.
+fatal: Unable to persist credentials with the 'wincredman' credential store.
+See https://aka.ms/gcm/credstores for more information.
+bash: line 1: /dev/tty: No such device or address
+error: failed to execute prompt script (exit code 1)
+fatal: could not read Username for 'https://github.com': No such file or directory
+[2026-09-30 12:02:44]   Exit code: 128
+[2026-09-30 12:02:44] ОШИБКА: не удалось выполнить git push.
